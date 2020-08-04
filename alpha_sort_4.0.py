@@ -17,16 +17,16 @@ d = dict()
 import collections
 for w in words:
     alpha = sorted(w.lower())
-    in_alphabet = [l for l in alpha if l in alphabet] # filter out any character not in the alphabet, including spaces
+    in_alphabet = [l for l in alpha if l in alphabet] # filter out any character not in the alphabet, including spaces https://realpython.com/list-comprehension-python/
     a = sorted(in_alphabet)
     c = dict(collections.Counter(a)) # provide the number of occurrences of each letter in each word and arrange alphabetically
     
-    for k, v in c.items():
+    for k, v in c.items(): #this for loop taken from StackOverflow: https://stackoverflow.com/questions/47082410/keep-highest-value-of-duplicate-keys-in-dicts
         if k not in d or d[k] < c[k]:
             d[k] = c[k]
 
 s = ""
-for k,v in sorted(d.items()):
+for k,v in sorted(d.items()): # https://stackoverflow.com/questions/16600174/return-output-of-dictionary-to-alphabetical-order
     if d[k] != 1:
         s = s + str(k) + "(" + str(d[k]) + "), "
     else:
