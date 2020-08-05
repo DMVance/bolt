@@ -12,7 +12,8 @@ wrdset = input("--> ")
 # split the string of words into individual words (eliminates spaces and obviates the need for c.pop(" ")?)
 words = wrdset.split()
 
-# For each word, sort the letters in alphabetical order, store as dict of lists
+# For each word, sort the letters in alphabetical order, count number of occurrences of each letter in each word, send only highest number of occurrences of each
+# letter into a new dictionary
 d = dict()
 import collections
 for w in words:
@@ -25,6 +26,8 @@ for w in words:
         if k not in d or d[k] < c[k]:
             d[k] = c[k]
 
+# alphabetically sort the new dictionary of letters (keys) and corresponding counts (values), put into string format to be able to print in desired format
+# Print with this format: a(2), b, c, d(3),...
 s = ""
 for k,v in sorted(d.items()): # https://stackoverflow.com/questions/16600174/return-output-of-dictionary-to-alphabetical-order
     if d[k] != 1:
@@ -32,4 +35,4 @@ for k,v in sorted(d.items()): # https://stackoverflow.com/questions/16600174/ret
     else:
         s = s + str(k) + ", "
 
-print(s[:-2]) # eliminates the comma and space after the last printed element
+print(s[:-2]) # print final output eliminates the comma and space after the last printed element
