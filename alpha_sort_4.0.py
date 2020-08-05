@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # This program allows the user to input a set of words, breaks each word into individual
 # letters, counts occurrences of each letter, sorts alphabetically and prints only highest number of occurrences
-# of each letter in any single word.
+# of each letter in any single word. Sample input: apple banana orange  Sample output: a(3), b, e, g, l, n(2), o, p(2), r
 
 alphabet = list("abcdefghijklmnopqrstuvwxyz")
 
